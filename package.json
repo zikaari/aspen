@@ -1,6 +1,6 @@
 {
   "name": "react-aspen",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Most performant solution for rendering nested trees in React apps",
   "main": "dist/index.js",
   "typings": "dist/typings/index.d.ts",
@@ -9,7 +9,7 @@
     "url": "https://github.com/neeksandhu/react-aspen.git"
   },
   "scripts": {
-		"test": "echo TESTS TODO!!!",
+    "test": "echo TESTS TODO!!!",
     "build": "tsc",
     "watch": "tsc -w",
     "lint": "tslint --project .",
@@ -19,14 +19,14 @@
     "publish-docs": "gh-pages -d dist/docs"
   },
   "keywords": [
-		"react",
-		"virtualized",
-		"file",
-		"tree",
-		"nested",
-		"object",
-		"list"
-	],
+    "react",
+    "virtualized",
+    "file",
+    "tree",
+    "nested",
+    "object",
+    "list"
+  ],
   "devDependencies": {
     "@types/node": "^8.0.34",
     "@types/p-series": "^1.0.1",
@@ -48,7 +48,7 @@
   "peerDependencies": {
     "react": "^16.0.0",
     "react-dom": "^16.0.0"
-	},
+  },
   "author": "Neek Sandhu <neek.sandhu@outlook.com>",
   "license": "MIT",
   "bugs": {
