@@ -1,6 +1,6 @@
 {
   "name": "react-aspen",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Most performant solution for rendering nested trees in React apps",
   "main": "dist/index.js",
   "typings": "dist/typings/index.d.ts",
