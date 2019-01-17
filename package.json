@@ -40,7 +40,7 @@
     "typescript": "^3.2.2"
   },
   "dependencies": {
-    "aspen-tree-model": "^1.0.0",
+    "aspen-tree-model": "^1.0.2",
     "notificar": "^1.0.1",
     "p-series": "^1.0.0",
     "path-fx": "^2.1.0",
