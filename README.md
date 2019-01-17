@@ -5,7 +5,20 @@ React Aspen is **the most** performant solution for displaying ~~nested trees~~ 
 It's uses lightning fast `TypedArray`s to represent the data and `react-window` for super-efficient rendering. You define **what** needs to be rendered
 and Aspen figures out the **how**, while leaving you 100% incharge of the **looks**.
 
-<img src="https://i.imgur.com/94wkW8q.gif" width="350"/>
+<div>
+    <img src="https://i.imgur.com/94wkW8q.gif" width="350" alt="Aspen filetree animated demo" style="float: left;margin-right: 10px;margin-bottom: 10px;">
+    <div style="display: inline-block;">
+        <div>
+          <img src="https://i.imgur.com/cTtXhow.gif" width="350" alt="Aspen filetree animated demo" style="display: block">
+          <h4>Inline renaming</h4>
+      </div>
+      <div>
+        <img src="https://i.imgur.com/DSTJCeD.gif" width="350" alt="Aspen filetree animated demo">
+        <h4>Inline file creation</h4>
+      </div>
+    </div>
+    <div style="clear: both"></div>
+</div>
 
 ## Features
 
