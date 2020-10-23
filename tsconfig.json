@@ -9,7 +9,8 @@
 		"sourceMap": true,
 		"downlevelIteration": true,
 		"experimentalDecorators": true,
-		"stripInternal": true
+		"stripInternal": true,
+		"skipLibCheck": true
     },
     "exclude": [
         "node_modules",
