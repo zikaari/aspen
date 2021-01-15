@@ -20,6 +20,19 @@ and Aspen figures out the **how**, while leaving you 100% incharge of the **look
     <div style="clear: both"></div>
 </div>
 
+## Trusted by
+
+React aspen is used by some of sweetest companies around the planet:
+
+<a href="https://superb-ai.com" style="position: relative; top: 4px;">
+  <img width="250" src="https://assets.website-files.com/5efe868cfe53d9f7c960955e/5efe9db13eab8798f87d3e39_%E1%84%8C%E1%85%A1%E1%84%89%E1%85%A1%E1%86%AB%202%404x%201.png">
+</a>
+<div style="display: inline-block; border-left: 1px solid; margin-left: 18px; padding-left: 18px;">
+  Using <code>react-aspen</code>?<br />
+	Add your company by <a href="https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request">
+	creating a pull request</a>
+</div>
+
 ## Features
 
  - Zero recursion. Unlike most implementations, which recurse the given nested object to flatten it out at once, Aspen sets up an initial `Uint32Array` for
