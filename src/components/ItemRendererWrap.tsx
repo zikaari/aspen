@@ -67,8 +67,12 @@ export class ItemRendererWrap extends React.Component<IItemRendererWrapProps> {
 				: this.props.itemType === ItemType.NewFilePrompt || this.props.itemType === ItemType.NewDirectoryPrompt
 					? (this.props.item as NewFilePromptHandle).parent
 					: null
-		if (thisItem && thisItem.path) {
-			this.lastItemPath = thisItem.path
+		try {
+			if (thisItem && thisItem.path) {
+				this.lastItemPath = thisItem.path
+			}
+		} catch (e) {
+			console.error(e)
 		}
 	}
 }
