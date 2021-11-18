@@ -1,0 +1,28 @@
+{
+  "name": "aspen-core",
+  "description": "The most performant virtualized tree driver",
+  "version": "0.0.0",
+  "keywords": [
+    "TODO"
+  ],
+  "main": "dist/index.js",
+  "typings": "dist/typings/index.d.ts",
+  "sideEffects": false,
+  "scripts": {
+    "test": "jest -c ../../package.json --roots=packages/aspen-core",
+    "build": "tsc",
+    "watch": "tsc -w",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "prepack": "yarn test && yarn build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/neeksandhu/aspen.git",
+    "directory": "packages/aspen-core"
+  },
+  "author": "Neek Sandhu <neek.sandhu@outlook.com>",
+  "license": "MIT",
+  "dependencies": {
+    "vscode-uri": "^3.0.2"
+  }
+}

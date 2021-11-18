@@ -1,21 +1,19 @@
 {
-    "compilerOptions": {
-        "module": "commonjs",
-        "target": "esnext",
-        "outDir": "./dist",
-        "jsx": "react",
-        "declaration": true,
-		"declarationDir": "./dist/typings",
-		"sourceMap": true,
-		"downlevelIteration": true,
-		"experimentalDecorators": true,
-		"stripInternal": true,
-		"skipLibCheck": true
-    },
-    "exclude": [
-        "node_modules",
-        "lib",
-		"dist",
-		"__tests__"
-    ]
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es6",
+    "declaration": true,
+    "sourceMap": true,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "esModuleInterop": true,
+    "stripInternal": true,
+    "skipLibCheck": true
+  },
+  "exclude": [
+    "**/node_modules/*",
+    "**/lib/*",
+    "**/dist/*",
+    "**/__tests_/*"
+  ]
 }

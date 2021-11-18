@@ -1,0 +1,32 @@
+{
+  "name": "react-aspen",
+  "description": "The most performant virtualized tree renderer on Earth",
+  "version": "0.0.0",
+  "keywords": [
+    "TODO"
+  ],
+  "main": "dist/index.js",
+  "typings": "dist/typings/index.d.ts",
+  "sideEffects": false,
+  "scripts": {
+    "test": "jest -c ../../package.json --roots=packages/react-aspen",
+    "build": "tsc",
+    "watch": "tsc -w",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "prepack": "yarn test && yarn build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/neeksandhu/aspen.git",
+    "directory": "packages/react-aspen"
+  },
+  "author": "Neek Sandhu <neek.sandhu@outlook.com>",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": "^16.0.0 || ^17.0.0",
+    "react-window": "^1.0.0"
+  },
+  "dependencies": {
+    "aspen-core": "^0.0.0"
+  }
+}
