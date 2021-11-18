@@ -1,7 +1,7 @@
 {
   "name": "aspen-core",
   "description": "The most performant virtualized tree driver",
-  "version": "0.0.0",
+  "version": "0.0.1-alpha.0",
   "keywords": [
     "TODO"
   ],

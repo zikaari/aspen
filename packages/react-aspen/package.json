@@ -1,7 +1,7 @@
 {
   "name": "react-aspen",
   "description": "The most performant virtualized tree renderer on Earth",
-  "version": "0.0.0",
+  "version": "0.0.1-alpha.0",
   "keywords": [
     "TODO"
   ],
@@ -27,6 +27,6 @@
     "react-window": "^1.0.0"
   },
   "dependencies": {
-    "aspen-core": "^0.0.0"
+    "aspen-core": "^0.0.1-alpha.0"
   }
 }
