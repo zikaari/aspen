@@ -4,5 +4,8 @@
     "outDir": "./dist",
     "declarationDir": "./dist/typings",
     "jsx": "react"
-  }
+  },
+  "include": [
+    "src/*"
+  ]
 }

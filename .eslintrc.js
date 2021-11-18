@@ -10,10 +10,7 @@ module.exports = {
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
-    project: [
-      './packages/aspen-core/tsconfig.json',
-      './packages/react-aspen/tsconfig.json'
-    ]
+    project: './tsconfig.json'
   },
   plugins: [
     '@typescript-eslint',
