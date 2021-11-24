@@ -13,8 +13,8 @@ export class Tree<NodeDataT extends {} = {}> {
   private pendingLoadChildrenRequests = new Map<Branch, Promise<void>>();
   private onVisibleNodesChangeCallback: () => void = () => void 0;
 
-  public static isLeaf = (treeNode: TreeNode): boolean => treeNode.constructor === Leaf;
-  public static isBranch = (treeNode: TreeNode): boolean => treeNode.constructor === Branch;
+  public static isLeaf = <T>(treeNode: TreeNode<T>): treeNode is Leaf<T> => treeNode.constructor === Leaf;
+  public static isBranch = <T>(treeNode: TreeNode<T>): treeNode is Branch<T> => treeNode.constructor === Branch;
 
   constructor(private source: TreeSource<NodeDataT>, rootBranchData?: NodeDataT) {
     this.rootBranch = new Branch(this.nextId(), null, rootBranchData);
@@ -68,7 +68,7 @@ export class Tree<NodeDataT extends {} = {}> {
       if (recursive) {
         await Promise.all(branch.nodes.map(node =>
           Tree.isBranch(node)
-            ? this.expand(node as Branch<NodeDataT>, ensureVisible, recursive)
+            ? this.expand(node, ensureVisible, recursive)
             : null
         ));
       }
@@ -118,7 +118,7 @@ export class Tree<NodeDataT extends {} = {}> {
       this.treeNodeMap.delete(childNode.id);
 
       if (Tree.isBranch(childNode)) {
-        (childNode as Branch).nodes?.forEach(teardown);
+        childNode.nodes?.forEach(teardown);
       }
     };
 
@@ -155,8 +155,8 @@ export class Tree<NodeDataT extends {} = {}> {
         this.setNodes(parent, nodes);
 
         for (const node of nodes) {
-          if (Tree.isBranch(node) && (node as Branch).expanded) {
-            this.expand(node as Branch<NodeDataT>);
+          if (Tree.isBranch(node) && node.expanded) {
+            this.expand(node);
           }
         }
       })();
@@ -183,9 +183,9 @@ export class Tree<NodeDataT extends {} = {}> {
         }
 
         // if a child branch is expanded, we must disconnect it (will be reconnected later)
-        if (Tree.isBranch(node) && (node as Branch).expanded) {
-          this.disconnectBranchFromClosestFlatView(node as Branch);
-          restoreExpansionQueue.unshift(node as Branch);
+        if (Tree.isBranch(node) && node.expanded) {
+          this.disconnectBranchFromClosestFlatView(node);
+          restoreExpansionQueue.unshift(node);
         }
       }
     }
@@ -229,7 +229,7 @@ export class Tree<NodeDataT extends {} = {}> {
     const { spliced } = spliceTypedArray(parentFlatView, start, end - start);
 
     if (Tree.isBranch(node)) {
-      ((node as Branch).expanded as boolean) = false;
+      (node.expanded as boolean) = false;
     }
 
     this.flatViewMap.set(shadowParent.id, spliced);
