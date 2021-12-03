@@ -15,6 +15,7 @@ export interface IFileTreeProps {
 	onReady?: (handle: IFileTreeHandle) => void
 	style?: React.CSSProperties
 	className?: string
+	disableCache: boolean
 }
 
 enum FileTreeViewEvent {
@@ -25,6 +26,9 @@ enum FileTreeViewEvent {
 const BATCHED_UPDATE_MAX_DEBOUNCE_MS = 4
 
 export class FileTree extends React.Component<IFileTreeProps> {
+	public static defaultProps = {
+		disableCache: false
+	 }
     /**
      * Index must be one greater than target (the potential parent directory)
      *
@@ -49,6 +53,7 @@ export class FileTree extends React.Component<IFileTreeProps> {
 		let timer: number
 		const commitUpdate = () => {
 			const { root } = this.props.model
+			let disableCache = this.props.disableCache;
 			let newFilePromptInsertionIndex: number = -1
 			if (this.promptTargetID > -1 &&
 				this.promptHandle instanceof NewFilePromptHandle &&
@@ -62,7 +67,9 @@ export class FileTree extends React.Component<IFileTreeProps> {
 				}
 			}
 			this.newFilePromptInsertionIndex = newFilePromptInsertionIndex
-			this.idxTorendererPropsCache.clear()
+			if(!disableCache) {
+				this.idxTorendererPropsCache.clear()
+			}
 			this.forceUpdate(resolver)
 		}
 		// return () => new Promise((res) => {
@@ -328,7 +335,10 @@ export class FileTree extends React.Component<IFileTreeProps> {
 	}
 
 	private getItemAtIndex = (index: number): IItemRendererProps => {
-		let cached: IItemRendererProps = this.idxTorendererPropsCache.get(index)
+		let cached: IItemRendererProps = null;
+		if(!this.props.disableCache) {
+		    cached = this.idxTorendererPropsCache.get(index)
+		}
 		if (!cached) {
 			const promptInsertionIdx = this.newFilePromptInsertionIndex
 			const { root } = this.props.model
@@ -366,7 +376,9 @@ export class FileTree extends React.Component<IFileTreeProps> {
 					} as any
 				}
 			}
-			this.idxTorendererPropsCache.set(index, cached)
+			if (!this.props.disableCache) {
+				this.idxTorendererPropsCache.set(index, cached)
+			}
 		}
 		return cached
 	}
