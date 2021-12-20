@@ -26,9 +26,6 @@ enum FileTreeViewEvent {
 const BATCHED_UPDATE_MAX_DEBOUNCE_MS = 4
 
 export class FileTree extends React.Component<IFileTreeProps> {
-	public static defaultProps = {
-		disableCache: false
-	 }
     /**
      * Index must be one greater than target (the potential parent directory)
      *
