@@ -26,12 +26,12 @@ enum FileTreeViewEvent {
 const BATCHED_UPDATE_MAX_DEBOUNCE_MS = 4
 
 export class FileTree extends React.Component<IFileTreeProps> {
-    /**
-     * Index must be one greater than target (the potential parent directory)
-     *
-     * Must be kept updated at ALL TIMES
-     * Doing indexOf every time Root.onDidChangeBranch should be good
-     */
+	/**
+	 * Index must be one greater than target (the potential parent directory)
+	 *
+	 * Must be kept updated at ALL TIMES
+	 * Doing indexOf every time Root.onDidChangeBranch should be good
+	 */
 	private newFilePromptInsertionIndex: number = -1
 	private promptTargetID: number // NumericID <FileEntry | Directory>
 	/**
@@ -50,7 +50,7 @@ export class FileTree extends React.Component<IFileTreeProps> {
 		let timer: number
 		const commitUpdate = () => {
 			const { root } = this.props.model
-			let disableCache = this.props.disableCache;
+			const disableCache = this.props.disableCache
 			let newFilePromptInsertionIndex: number = -1
 			if (this.promptTargetID > -1 &&
 				this.promptHandle instanceof NewFilePromptHandle &&
@@ -64,7 +64,7 @@ export class FileTree extends React.Component<IFileTreeProps> {
 				}
 			}
 			this.newFilePromptInsertionIndex = newFilePromptInsertionIndex
-			if(!disableCache) {
+			if (!disableCache) {
 				this.idxTorendererPropsCache.clear()
 			}
 			this.forceUpdate(resolver)
@@ -332,9 +332,9 @@ export class FileTree extends React.Component<IFileTreeProps> {
 	}
 
 	private getItemAtIndex = (index: number): IItemRendererProps => {
-		let cached: IItemRendererProps = null;
-		if(!this.props.disableCache) {
-		    cached = this.idxTorendererPropsCache.get(index)
+		let cached: IItemRendererProps = null
+		if (!this.props.disableCache) {
+			cached = this.idxTorendererPropsCache.get(index)
 		}
 		if (!cached) {
 			const promptInsertionIdx = this.newFilePromptInsertionIndex
