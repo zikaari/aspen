@@ -56,3 +56,8 @@ jspm_packages/
 
 # transpiled output
 dist
+
+# pnpm / tooling
+.pnpm-store/
+*.tsbuildinfo
+.DS_Store

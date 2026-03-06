@@ -1,0 +1,67 @@
+{
+	"name": "react-aspen",
+	"version": "2.0.0-alpha.0",
+	"description": "The most performant way to render dynamic nested trees in React apps",
+	"keywords": [
+		"react",
+		"tree",
+		"virtualized",
+		"nested",
+		"lazy",
+		"typedarray"
+	],
+	"license": "MIT",
+	"author": "Neek Sandhu <neek.sandhu@outlook.com>",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/zikaari/aspen.git",
+		"directory": "packages/react-aspen"
+	},
+	"homepage": "https://github.com/zikaari/aspen#readme",
+	"bugs": {
+		"url": "https://github.com/zikaari/aspen/issues"
+	},
+	"type": "module",
+	"sideEffects": false,
+	"files": [
+		"dist",
+		"README.md",
+		"LICENSE"
+	],
+	"exports": {
+		".": {
+			"@aspen/source": "./src/index.ts",
+			"default": "./dist/index.js"
+		},
+		"./package.json": "./package.json"
+	},
+	"scripts": {
+		"build": "tsdown",
+		"dev": "tsdown --watch",
+		"typecheck": "tsc --noEmit"
+	},
+	"dependencies": {
+		"react-window": "^1.8.11"
+	},
+	"peerDependencies": {
+		"aspen-core": "workspace:^",
+		"aspen-tree-model": "workspace:^",
+		"react": ">=18",
+		"react-dom": ">=18"
+	},
+	"devDependencies": {
+		"@types/react": "19.3.0",
+		"@types/react-dom": "19.3.0",
+		"@types/react-window": "^1.8.8",
+		"aspen-core": "workspace:*",
+		"aspen-tree-model": "workspace:*",
+		"react": "19.3.1",
+		"react-dom": "19.3.1"
+	},
+	"publishConfig": {
+		"exports": {
+			".": "./dist/index.js",
+			"./package.json": "./package.json"
+		}
+	}
+}

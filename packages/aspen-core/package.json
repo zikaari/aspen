@@ -1,0 +1,49 @@
+{
+	"name": "aspen-core",
+	"version": "2.0.0-alpha.0",
+	"description": "Sync dynamic nested trees with their flattened, typed-array backed representation",
+	"keywords": [
+		"tree",
+		"nested",
+		"flatten",
+		"typedarray",
+		"virtualized",
+		"lazy"
+	],
+	"license": "MIT",
+	"author": "Neek Sandhu <neek.sandhu@outlook.com>",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/zikaari/aspen.git",
+		"directory": "packages/aspen-core"
+	},
+	"homepage": "https://github.com/zikaari/aspen#readme",
+	"bugs": {
+		"url": "https://github.com/zikaari/aspen/issues"
+	},
+	"type": "module",
+	"sideEffects": false,
+	"files": [
+		"dist",
+		"README.md",
+		"LICENSE"
+	],
+	"exports": {
+		".": {
+			"@aspen/source": "./src/index.ts",
+			"default": "./dist/index.js"
+		},
+		"./package.json": "./package.json"
+	},
+	"scripts": {
+		"build": "tsdown",
+		"dev": "tsdown --watch",
+		"typecheck": "tsc --noEmit"
+	},
+	"publishConfig": {
+		"exports": {
+			".": "./dist/index.js",
+			"./package.json": "./package.json"
+		}
+	}
+}
